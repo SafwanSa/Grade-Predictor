@@ -41,12 +41,15 @@ for _ in range(30):
 pickle_in = open("coe202marks.pickle", "rb")
 linear = pickle.load(pickle_in)
 
-#
-predictions = linear.predict(x_test)
+# predictions = linear.predict(x_test)
+# for x in range(len(predictions)):
+#     print("Predicted: ",np.round(predictions[x],2), x_test[x], "Actual: ",y_test[x])
+
+# ["absences","dic","classw","G1","G2","G3"]
+inp = np.array([4, 5, 20, 25, 25]).reshape(1, -1)
+predictions = linear.predict(inp)
 for x in range(len(predictions)):
-    print("Predicted: ",np.round(predictions[x],2), x_test[x], "Actual: ",y_test[x])
-
-
+    print("Predicted: ",np.round(predictions[x],2), inp)
 
 # p = "dic"
 # style.use("ggplot")
